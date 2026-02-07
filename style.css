@@ -1,0 +1,180 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(206, 203, 195); /* Color crema suave tipo papel d2bfa6 */
+    font-family: 'Caveat', italic; /* Fuente manuscrita */
+    color: #333;
+    background-image: linear-gradient(#d2bfa6 1px, transparent 1px), linear-gradient(90deg, #d2bfa6 1px, transparent 1px);
+    background-size: 30px 30px;
+    text-align: center;
+    padding-bottom: 100px; /* Espacio para el reproductor */
+}
+
+header {
+    padding: 50px 20px;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    color: #86895d; /* Un naranja quemado o elige su color favorito */
+}
+
+header p {
+    font-size: 1.5rem;
+    color: #777;
+}
+
+/* Contenedor flexible */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ESTILO POLAROID */
+.polaroid {
+    background: white;
+    padding: 15px 15px 60px 15px; /* Padding inferior grande para el texto */
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2); /* Sombra realista */
+    width: 280px; /* Tamaño fijo para que parezcan fotos reales */
+    transform: rotate(-2deg); /* Rotación inicial ligera */
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Efecto Hover: Se endereza y crece un poco */
+.polaroid:hover {
+    transform: scale(1.1) rotate(0deg) z-index(10);
+    box-shadow: 10px 10px 25px rgba(0,0,0,0.3);
+    z-index: 10; /* Para que se ponga por encima de las demás */
+}
+
+/* Alternar rotaciones para que se vea desordenado (pseudo-random) */
+.polaroid:nth-child(even) {
+    transform: rotate(3deg);
+}
+.polaroid:nth-child(3n) { /* Cada 3 fotos */
+    transform: rotate(-4deg);
+}
+
+.polaroid img {
+    width: 100%;
+    height: auto;
+    filter: sepia(20%); /* Filtro vintage opcional */
+    border: 1px solid #eee;
+}
+
+.polaroid p {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    color: #444;
+}
+
+/* Tachuela decorativa (Opcional) */
+.pin {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #c0392b; /* Tachuela roja */
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 40px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 500px;
+    max-height: 70vh;
+    position: relative;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+    text-align: center;
+    animation: aparecer 0.3 ease;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #86895d;
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #86895d;
+}
+
+@keyframes aparecer {
+    from {transform: scale(0.7); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #999;
+}
+
+.texto-mensaje {
+    font-size: 2rem;
+    line-height: 1.4;
+    color: #333;
+}
+
+.texto-autor {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #86895d;
+    font-weight: bold;
+}
+
+/* Reproductor fijo abajo */
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 10px;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 100;
+}

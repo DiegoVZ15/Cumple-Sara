@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños Sara!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Feliz Cumpleaños Sara!</h1>
+        <p>Esta es una pequeña recopilación de momentos importantes con todos nosotros...</p>
+    </header>
+
+    <div class="gallery-container">
+        
+        <div class="polaroid">
+            <div class="pin"></div> 
+            <img src="foto10.jpeg" alt="Recuerdo 1">
+            <p></p>
+        </div>
+
+        <div class="polaroid" onclick="abrirModal(this)"
+            data-mensaje="Hola Saritaa, soi fany hihihi, feliz cumpleaños corazón, de verdad creeme que te lo digo desde el alma ya que enserio eres una persona demasiado importante para mi, eres super linda y amable, divertida e inteligente, que siempre piensas en los demas y en lo que es correcto, creeme que te admiro demasiado por tu forma tan linda de ser, eres como un lirio que le da la luz dorada del sol que entra en la ventana.
+Tienes un alma tan bonita, que me haces sentir demasiado comoda y escuchada, enserio gracias por ser mi amiga, me entiendes demasiado. Me alegro mucho de poder vivir una de las mejores etapas de mi vida contigo, incluso logré verte en el concierto de enjambre que fue algo genial.
+A pesar de ya no vernos tan seguido como antes, creeme que sigues siendo y siempre serás de mis mejores amigas que tengo. Te amo mucho Sarita"
+            data-autor="- Fany">
+            <div class="pin"></div>
+            <img src="foto8.jpeg" alt="Recuerdo 2">
+            <p>Mensaje especial!</p>
+        </div>
+
+        <div class="polaroid">
+            <div class="pin"></div>
+            <img src="foto4.jpeg" alt="Recuerdo 3">
+            <p></p>
+        </div>
+        
+        <div class="polaroid" onclick="abrirModal(this)"
+            data-mensaje="Mi Sarita bella, estoy muy feliz de seguir acompañándote y siendo parte de tu vida, y aunque extraño mucho verte, estar contigo y reírnos juntas diariamente, me pone muy orgullosa ver cómo sigues creciendo y esforzándote por cumplir tus sueños. Siempre voy a estar para ti, sin importar cuanto tiempo haya pasado sin hablar o si no respondo tu tiktoks je, siempre siempre vas a ser mi personita especial. Te amo con todo mi corazón, de verdad, me emociona mucho la idea de vernos crecer y poder contarnos mil y un cosas cuando seamos viejitas. Sigue brillando preciosa. Te amo 🩷"
+            data-autor="- Yuli">
+            <div class="pin"></div>
+            <img src="foto14.jpeg" alt="Recuerdo 9">
+            <p>Alguien importante te quiere decir algo...</p>
+        </div>
+
+        <div class="polaroid">
+            <div class="pin"></div>
+            <img src="foto9.jpeg" alt="Recuerdo 5">
+            <p></p>
+        </div>
+
+        <div class="polaroid"  onclick="abrirModal(this)"
+            data-mensaje="ola bellísima, primeramente quiero desearte un feliz cumpleaños y todo lo hermoso del mundo, te adoro con el alma amiga, eres de mis personas favoritas y soy la más feliz al tener la oportunidad de pasar un año más contigo, eres increíble y siempre voy a desearte lo mejor, estoy muy orgullosa de quien eres  y de todo lo que has logrado, siempre estaré aquí para apoyarte y consolarte las veces que sean necesarias, te amo muchísimo"
+            data-autor="- Karen">
+            <div class="pin"></div>
+            <img src="foto2.jpeg" alt="Recuerdo 6">
+            <p>Mensajito lindo</p>
+        </div>  
+
+        <div class="polaroid">
+            <div class="pin"></div>
+            <img src="foto11.jpeg" alt="Recuerdo 7">
+            <p></p>
+        </div>
+
+        <div class="polaroid">
+            <div class="pin"></div>
+            <img src="foto12.jpeg" alt="Recuerdo 8">
+            <p>Buena salidita, aunque no soy bueno jugando al impostor. - Diego</p>
+        </div>
+
+        <div class="polaroid" onclick="abrirModal(this)"
+            data-mensaje="Me gustan tus besitos, tienes ojos muy lindos y me siento muy cómodo contigo. Eres la mejor amiga y amante bandida que he podido tener.
+            Hacemos buen equipo tipo pan con queso, frijol con puerco, sal y chicha. No cambiaría nada de estos últimos dos años.
+            Todo el tiempo que hemos pasado juntos ha sido la mejor experiencia que he tenido, me sacaste de un hueco emocional gigante y me lo hiciste saber. Cada vez que me buscabas, hablabas y escuchabas era como si me pusieras una curita en el alma.
+            Fuiste la primera persona que me vio a mi, no a un chiste o un payaso para hacer menos, me viste tal como soy y me aceptaste. Sarita, te amo"
+            data-autor="- Santiago">
+            <div class="pin"></div>
+            <img src="foto13.jpeg" alt="Recuerdo 9">
+            <p>Atte. Tu sonso favorito :P</p>
+        </div>
+
+        <div class="polaroid" onclick="abrirModal(this)"
+            data-mensaje="Gracias por todo Sara, te consideramos una amiga increíble que siempre ha estado ahí para nosotros. Tal vez no nos llevemos mucho o no hayamos hablado muy seguido, pero definitivamente nuestras vidas hubieran sido muy diferentes si no hubieras estado ahí.
+            Todas esas risas y esos momentos cercanos significan mucho para nosotros, esperamos que este año puedas cumplir lo que te propongas y que logremos formar aún más recuerdos juntos."
+            data-autor="- Con cariño, tus amigos">
+            <div class="pin"></div>
+            <img src="foto6.jpeg" alt="Recuerdo 10">
+            <p>Uno último!</p>
+        </div>
+
+        <div id="miModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="cerrarModal()">&times;</span>
+                <p id="modal-texto" class="texto-mensaje"></p>
+                <p id="modal-autor" class="texto-autor"></p>
+            </div>
+        </div>
+
+        </div>
+
+    <div class="music-player">
+        <audio controls autoplay loop>
+            <source src="cancion.flac" type="audio/flac">
+            Tu navegador no soporta el audio.
+        </audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
